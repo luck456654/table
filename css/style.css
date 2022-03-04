@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Segoe Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display:swap;
+    src: local(''),
+         url('../fonts/Segoe-UI.woff') format('woff'), 
+      
+  }
+ 
+  @font-face {
+    font-family: 'Segoe Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-display:swap;
+    src: local(''),
+         url('../fonts/Segoe-Bold.woff') format('woff'); 
+  }
+.table__color{
+    width: 16px;
+    height: 16px;
+}
+.table__color-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.table__name{
+    text-transform: capitalize;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+}
+.title__button{
+    width: 18px;
+    height: 18px;
+}
+
+    .title__button-reset {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+        top: 4vw;
+        left: 90vw;
+    }
+.table__number{
+    text-align: center;
+}
+.table{
+font-family: 'Segoe Regular';
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #000000;
+width: 100%;
+}
+.table__hr{
+    width: 100%;
+    color: gray;
+    size: 2px;
+}

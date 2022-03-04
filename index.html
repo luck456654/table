@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+     <h2>Pantone colors</h2>
+     
+     </div>
+     </div>
+     <div id="app">
+        <div class="title__button-reset" @click= "reset"  v-if="id == 'false'||name == 'false'||year == 'false'||color == 'false'||pantone == 'false'">
+            <img src="img/icon-reset.png" class="title__button" alt="Cбросить"/>
+            <div class="title__reset">Reset</div>
+            </div>
+        <table class="table">
+            <tbody>
+                <thead>
+                    <td v-if="id == 'true'"  class="table__column-id"> <input class="table__checkbox-id" @change="hideColumnId()" checked='true' type="checkbox"/>ID</td>
+                    <td v-if="name == 'true'"> <input class="table__checkbox-name"  type="checkbox"  @change="hideColumnName()" checked='true'/>NAME</td>
+                    <td v-if="year == 'true'"> <input class="table__checkbox-year" checked="true" type="checkbox" @change="hideColumnYear()"/>YEAR</td>
+                    <td v-if="color == 'true'"> <input class="table__checkbox-color" checked="true" type="checkbox" @change="hideColumnColor()"/>COLOR</td>
+                    <td v-if="pantone == 'true'"> <input class="table__checkbox-pantone" checked="true" type="checkbox" @change="hideColumnPantone()"/>PANTONE VANUE</td>
+                </thead>
+                <tr v-for="item in info.data" :key="item.id" class="table__tr">
+                    <td v-if="id == 'true'" class="table__column-id table__number">
+                        {{item.id}}
+                    </td>
+                    <td v-if="name == 'true'" class="table__name">
+                        {{ item.name }}
+                    </td>
+                    <td v-if="year == 'true'">
+                        <div class="table__number">{{ item.year }}</div>
+                    </td>
+                    <td v-if="color == 'true'" class="table__color-wrapper">
+                        <div class="table__color" :style="{backgroundColor:  item.color}"></div>{{ item.color }}
+                    </td>
+                    <td  v-if="pantone == 'true'">
+                        {{ item.pantone_value }}
+                    </td>
+                 
+                </tr>
+                
+            </tbody>
+        </table>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+
+</html>
